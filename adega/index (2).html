@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adega Beer&Espetinhos</title>
+<link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+<header>
+    <div class="header-top">
+        <div class="logo">
+            <h1>ADEGA BEER</h1>
+            <p>Bebidas Geladas e Entrega Rápida</p>
+        </div>
+
+        <form class="busca" onsubmit="return false;">
+            <input type="text" id="campo-busca" placeholder="Buscar produto...">
+            <button type="submit">🔍</button>
+        </form>
+
+        <div class="acoes-header">
+            <a class="contato-rapido" href="https://wa.me/5519991920097" target="_blank">
+                📲 (19) 99192-0097
+            </a>
+
+            <button class="botao-carrinho" id="botao-carrinho" onclick="abrirCarrinho()">
+                🛒
+                <span class="carrinho-contador" id="carrinho-contador">0</span>
+            </button>
+        </div>
+    </div>
+
+    <p id="busca-sem-resultado" class="busca-sem-resultado" hidden>
+        Nenhum produto encontrado.
+    </p>
+
+    <!-- BARRA DE CATEGORIAS COM ÍCONES (gerada automaticamente a partir de produtos.js) -->
+    <nav class="categorias">
+        <ul class="categorias-lista" id="categorias-lista">
+            <!-- preenchido pelo script.js -->
+        </ul>
+    </nav>
+</header>
+
+<div class="banner">
+    CARDÁPIOS 🍻
+</div>
+
+<!-- ===========================
+     BANNER PROMOCIONAL (item 7)
+     Troque a imagem em banner-promocao.webp pela arte real
+     quando tiver a versão final. O link abre o WhatsApp.
+=========================== -->
+<a class="banner-promocao" href="https://wa.me/5519991920097?text=Quero%20saber%20mais%20sobre%20o%20Cop%C3%A3o%20Whiskey%21" target="_blank">
+    <img src="./Captura_de_tela_20-6-2026_214244_.jpeg" alt="Promoção Copão Whiskey + Energéticos">
+</a>
+
+<!-- ===========================
+     SEÇÕES DE PRODUTOS
+     Geradas automaticamente a partir de produtos.js —
+     para adicionar/editar produto, edite esse arquivo.
+=========================== -->
+<div id="secoes-produtos">
+    <!-- preenchido pelo script.js -->
+</div>
+
+<a class="whatsapp" href="https://wa.me/5519991920097" target="_blank">
+    📲 Fazer Pedido
+</a>
+
+<footer>
+    <p>Adega Beer&Espetinhos</p>
+    <div class="contato">
+        <img src="pngtree-whatsapp-icon-png-image_3584844-removebg-preview.png" alt="WhatsApp">
+        (19) 99192-0097
+    </div>
+    <p style="margin-top:10px; font-size:12px; color:#999;">Se beber, não dirija! Venda proibida para menores de 18 anos.</p>
+
+    <p class="endereco-footer">
+    📍 <a href="https://www.google.com/maps/search/?api=1&query=Av.+Pres.+Juscelino+2346+Campinas+S%C3%A3o+Paulo" target="_blank">
+        Av. Pres. Juscelino, 2346 – Campinas, SP
+    </a>
+</p>
+
+</footer>
+
+<!-- ===========================
+     CARRINHO (painel lateral)
+=========================== -->
+<div class="overlay-carrinho" id="overlay-carrinho" onclick="fecharCarrinho()"></div>
+
+<aside class="painel-carrinho" id="painel-carrinho">
+    <div class="painel-carrinho-topo">
+        <h2>🛒 Seu pedido</h2>
+        <button class="fechar-carrinho" onclick="fecharCarrinho()">✕</button>
+    </div>
+
+    <div class="painel-carrinho-itens" id="lista-carrinho">
+        <p class="carrinho-vazio" id="carrinho-vazio">Seu carrinho está vazio.</p>
+    </div>
+
+    <div class="painel-carrinho-rodape">
+        <div class="carrinho-total">
+            <span>Total</span>
+            <span id="carrinho-total">R$ 0,00</span>
+        </div>
+        <button class="botao-finalizar" id="botao-finalizar" onclick="finalizarPedido()" disabled>
+            Finalizar pedido no WhatsApp
+        </button>
+    </div>
+</aside>
+
+<script src="produtos.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

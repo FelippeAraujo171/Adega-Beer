@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adega Beer&Espetinhos</title>
+<link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    
+
+<header>
+    <div class="header-top">
+        <div class="logo">
+            <h1>ADEGA BEER</h1>
+            <p>Bebidas Geladas e Entrega Rápida</p>
+        </div>
+
+        <form class="busca" onsubmit="return false;">
+            <input type="text" id="campo-busca" placeholder="Buscar produto...">
+            <button type="submit">🔍</button>
+        </form>
+
+        <div class="acoes-header">
+            <a class="contato-rapido" href="https://wa.me/5519991920097" target="_blank">
+                📲 (19) 99192-0097
+            </a>
+
+            <button class="botao-carrinho" id="botao-carrinho" onclick="abrirCarrinho()">
+                🛒
+                <span class="carrinho-contador" id="carrinho-contador">0</span>
+            </button>
+        </div>
+    </div>
+
+    <p id="busca-sem-resultado" class="busca-sem-resultado" hidden>
+        Nenhum produto encontrado.
+    </p>
+
+    <!-- BARRA DE CATEGORIAS COM ÍCONES -->
+    <nav class="categorias">
+        <ul class="categorias-lista">
+            <li class="categoria-item">
+                <button onclick="document.getElementById('refrigerantes').scrollIntoView({behavior:'smooth'})">
+                    <span class="icone-categoria">🥤</span>
+                    REFRIGERANTE
+                </button>
+            </li>
+            <li class="categoria-item">
+                <button onclick="document.getElementById('whiskys').scrollIntoView({behavior:'smooth'})">
+                    <span class="icone-categoria">🥃</span>
+                    WHISKY
+                </button>
+            </li>
+            <li class="categoria-item">
+                <button onclick="document.getElementById('cervejas').scrollIntoView({behavior:'smooth'})">
+                    <span class="icone-categoria">🍺</span>
+                    CERVEJA
+                </button>
+            </li>
+            <li class="categoria-item">
+                <button onclick="document.getElementById('energeticos').scrollIntoView({behavior:'smooth'})">
+                    <span class="icone-categoria">⚡</span>
+                    ENERGÉTICO
+                </button>
+            </li>
+            <li class="categoria-item">
+                <button onclick="document.getElementById('petiscos').scrollIntoView({behavior:'smooth'})">
+                    <span class="icone-categoria">🥜</span>
+                    PETISCO
+                </button>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<div class="banner">
+    CARDÁPIOS 🍻
+</div>
+
+<a class="banner-promocao" href="https://wa.me/5519991920097?text=Quero%20saber%20mais%20sobre%20o%20Cop%C3%A3o%20Whiskey%21" target="_blank">
+    <img src="./Captura_de_tela_20-6-2026_214244_.jpeg" alt="Promoção Copão Whiskey + Energéticos">
+</a>
+
+<div id="secoes-produtos">
+    <!-- preenchido pelo script.js -->
+</div>
+
+<a class="whatsapp" href="https://wa.me/5519991920097" target="_blank">
+    📲 Fazer Pedido
+</a>
+
+
+<!-- ===========================
+     SEÇÃO: REFRIGERANTES
+=========================== -->
+<section class="secao-produtos" id="refrigerantes">
+    <h2>🥤 Refrigerantes</h2>
+    <div class="produtos">
+
+        <div class="card" data-nome="Coca-Cola 2L" data-preco="12.99">
+            <h3>Coca-Cola 2L</h3>
+            <p class="preco">R$ 12,99</p>
+            <img src="https://primefoodgt.com/wp-content/uploads/2020/04/coca-cola-2l.jpg" alt="Coca-Cola 2L">
+            <button class="botao-adicionar" onclick="adicionarAoCarrinho(this)">Adicionar</button>
+        </div>
+
+        <div class="card" data-nome="Coca-Cola da copa" data-preco="9.99">
+            <h3>coca-cola da copa</h3>
+            <p class="preco">R$ 9,99</p>
+            <img src="whisky_white_horse_700ml_569_2_2736d095caf35987d55295ff244efe4c.webp" alt="Coca-Cola da copa">
+            <button class="botao-adicionar" onclick="adicionarAoCarrinho(this)">Adicionar</button>
+        </div>
+
+      
+    </div>
+</section>
+
+<!-- ===========================
+     SEÇÃO: WHISKYS
+=========================== -->
+<section class="secao-produtos" id="whiskys">
+    <h2>🥃 Whiskys</h2>
+    <div class="produtos">
+
+        <div class="card" data-nome="Jack Daniel's" data-preco="0">
+            <h3>Jack Daniel's</h3>
+            <p class="preco">A combinar</p>
+            <img src="./whisky_jack_daniels_1000ml_773_1_10237127e2f5dda92c4774902197c2ba.webp" alt="Jack Daniels">
+            <button class="botao-adicionar" onclick="adicionarAoCarrinho(this)">Adicionar</button>
+        </div>
+
+        <div class="card" data-nome="White House" data-preco="0">
+            <h3>White House</h3>
+            <p class="preco">A combinar</p>
+            <img src="./whisky_white_horse_700ml_569_2_2736d095caf35987d55295ff244efe4c.webp" alt="White House">
+            <button class="botao-adicionar" onclick="adicionarAoCarrinho(this)">Adicionar</button>
+        </div>
+
+        <div class="card" data-nome="Red Label" data-preco="0">
+            <h3>Red Label</h3>
+            <p class="preco">A combinar</p>
+            <img src="./201-jpg.webp" alt="Red Label">
+            <button class="botao-adicionar" onclick="adicionarAoCarrinho(this)">Adicionar</button>
+        </div>
+
+    </div>
+</section>
+
+<!-- ===========================
+     SEÇÃO: CERVEJAS
+=========================== -->
+<section class="secao-produtos" id="cervejas">
+    <h2>🍺 Cervejas</h2>
+    <div class="produtos">
+
+        <div class="card" data-nome="Heineken Long Neck" data-preco="7.99">
+            <h3>Heineken Long Neck</h3>
+            <p class="preco">R$ 7,99</p>
+            <img src="https://img.megaboxatacado.com.br/produto/1000X1000/202039_84063.jpg" alt="Heineken Long Neck">
+            <button class="botao-adicionar" onclick="adicionarAoCarrinho(this)">Adicionar</button>
+        </div>
+
+        <div class="card" data-nome="Brahma Duplo Malte" data-preco="4.99">
+            <h3>Brahma Duplo Malte</h3>
+            <p class="preco">R$ 4,99</p>
+            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/106444563/cerveja-brahma-duplo-malte-puro-malte-350ml-lata-1.jpg?v=638144901422700000" alt="Brahma Duplo Malte">
+            <button class="botao-adicionar" onclick="adicionarAoCarrinho(this)">Adicionar</button>
+        </div>
+
+    </div>
+</section>
+
+<!-- ===========================
+     SEÇÃO: ENERGÉTICOS
+=========================== -->
+<section class="secao-produtos" id="energeticos">
+    <h2>⚡ Energéticos</h2>
+    <div class="produtos">
+
+        <div class="card" data-nome="Monster Energy" data-preco="11.99">
+            <h3>Monster Energy</h3>
+            <p class="preco">R$ 11,99</p>
+            <img src="https://www.bluedogbeverage.com/wp-content/uploads/2022/12/Monster-energy-drink.jpg" alt="Monster Energy">
+            <button class="botao-adicionar" onclick="adicionarAoCarrinho(this)">Adicionar</button>
+        </div>
+
+          <div class="card" data-nome="Baly 2L" data-preco="13.00">
+            <h3>Baly 2L</h3>
+            <p class="preco">R$ 13,00</p>
+            <img src="./213168-800-450.png" alt="Baly 2L">
+            <button class="botao-adicionar" onclick="adicionarAoCarrinho(this)">Adicionar</button>
+        </div>
+
+
+    </div>
+</section>
+
+<!-- ===========================
+     SEÇÃO: PETISCOS
+=========================== -->
+<section class="secao-produtos" id="petiscos">
+    <h2>🥜 Petiscos</h2>
+    <div class="produtos">
+
+        <div class="card" data-nome="Amendoim Japonês" data-preco="5.99">
+            <h3>Amendoim Japonês</h3>
+            <p class="preco">R$ 5,99</p>
+            <img src="https://savegnagoio.vtexassets.com/arquivos/ids/486704/AMENDOIMJAPONESMENDORATO150G1.jpg?v=638939046423470000" alt="Amendoim Japonês">
+            <button class="botao-adicionar" onclick="adicionarAoCarrinho(this)">Adicionar</button>
+        </div>
+
+    </div>
+</section>
+
+<a class="whatsapp" href="https://wa.me/5519991920097" target="_blank">
+    📲 Fazer Pedido
+</a>
+
+<footer>
+    <p>Adega Beer&Espetinhos</p>
+    <div class="contato">
+        <img src="pngtree-whatsapp-icon-png-image_3584844-removebg-preview.png" alt="WhatsApp">
+        (19) 99192-0097
+    </div>
+    <p style="margin-top:10px; font-size:12px; color:#999;">Se beber, não dirija! Venda proibida para menores de 18 anos.</p>
+</footer>
+
+<!-- ===========================
+     CARRINHO (painel lateral)
+=========================== -->
+<div class="overlay-carrinho" id="overlay-carrinho" onclick="fecharCarrinho()"></div>
+
+<aside class="painel-carrinho" id="painel-carrinho">
+    <div class="painel-carrinho-topo">
+        <h2>🛒 Seu pedido</h2>
+        <button class="fechar-carrinho" onclick="fecharCarrinho()">✕</button>
+    </div>
+
+    <div class="painel-carrinho-itens" id="lista-carrinho">
+        <p class="carrinho-vazio" id="carrinho-vazio">Seu carrinho está vazio.</p>
+    </div>
+
+    <div class="painel-carrinho-rodape">
+        <div class="carrinho-total">
+            <span>Total</span>
+            <span id="carrinho-total">R$ 0,00</span>
+        </div>
+        <button class="botao-finalizar" id="botao-finalizar" onclick="finalizarPedido()" disabled>
+            Finalizar pedido no WhatsApp
+        </button>
+    </div>
+</aside>
+
+<script src="script.js"></script>
+
+</body>
+</html>
